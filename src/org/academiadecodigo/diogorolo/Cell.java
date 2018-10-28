@@ -9,12 +9,12 @@ public class Cell {
     private Gem gem;
     private int col;
     private int row;
-    //private Picture picture;
     Rectangle rectangle;
+    //private Picture picture;
 
     //CONSTRUCTOR
     public Cell(int col, int row){
-        gem = new Gem();
+        gem = new Gem(col,row);
         this.col = col;
         this.row = row;
         rectangle = new Rectangle(Grid.getXcol(col),Grid.getYrow(row),Grid.CELL_SIZE,Grid.CELL_SIZE);

@@ -8,6 +8,7 @@ public class Grid {
     static final int X_PADDING = 10;
     static final int Y_PADDING = 10;
     private Cell[][] cells;
+    private Gem[][] gems;
 
     //METHODS
     public void init(int size){
@@ -19,7 +20,17 @@ public class Grid {
                 cells[i][j] = new Cell(i, j);
             }
         }
+
+        gems = new Gem[size][size];
+        for (int i = 0; i < gems.length ; i++) {
+            for (int j = 0; j < gems[i].length ; j++) {
+                gems[i][j] = new Gem(i, j);
+            }
+        }
+
     }
+
+
 
     //returns the pixel for the given col/row
     public static int getXcol(int col){
