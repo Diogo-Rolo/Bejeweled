@@ -40,6 +40,15 @@ public class Grid {
         return CELL_SIZE * row + Y_PADDING;
     }
 
+    public static int getColX(int x){
+        return (int) Math.round((x - X_PADDING)/(CELL_SIZE));
+    }
+    public static int getRowY(int y){
+        return (int) Math.round((y - Y_PADDING-25)/(CELL_SIZE));
+    }
 
 
+    public void selectGem(int col, int row) {
+        gems[col][row].select();
+    }
 }

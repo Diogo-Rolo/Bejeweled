@@ -15,4 +15,10 @@ public class Gem {
         this.pic = new Picture(Grid.getXcol(col), Grid.getYrow(row),mc.getImagePath());
         this.pic.draw();
     }
+
+    public void select() {
+        isSelected = !isSelected;
+        pic.load(mc.getImageSelectedPath(isSelected));
+        this.pic.draw();
+    }
 }

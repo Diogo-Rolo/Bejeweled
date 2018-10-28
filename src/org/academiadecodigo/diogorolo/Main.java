@@ -1,9 +1,12 @@
 package org.academiadecodigo.diogorolo;
 
+import org.academiadecodigo.diogorolo.mouse.GridMouseHandler;
+
 public class Main {
     public static void main(String[] args) {
 
-        Grid gamegrid = new Grid();
-        gamegrid.init(10);
+        Game game = new Game();
+        game.init();
+        game.start();
     }
 }

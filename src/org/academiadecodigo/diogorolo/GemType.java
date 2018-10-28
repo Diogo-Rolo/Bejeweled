@@ -4,15 +4,19 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public enum GemType {
     //MASTERCODER ("resources/cat.jpg"),
-    MC1 ("resources/gems/1mc0.png"),
-    MC2("resources/gems/2mc0.png"),
-    MC3("resources/gems/3mc0.png"),
-    MC4("resources/gems/4mc0.png");
+    MC1,
+    MC2,
+    MC3,
+    MC4;
 
-    private String imagePath;
+    private String path;
+    private String name;
+    private String extension;
 
-    GemType (String imagePath){
-        this.imagePath = imagePath;
+    GemType (){
+        path = "resources/gems/";
+        name = "mc";
+        extension = ".png";
     }
 
     public static GemType getRand(){
@@ -20,6 +24,11 @@ public enum GemType {
     }
 
     public String getImagePath() {
-        return imagePath;
+        return path+this.ordinal()+name+extension;
+    }
+
+    public String getImageSelectedPath(boolean isSelected) {
+        String selection = isSelected ? "S" : "";
+        return path+this.ordinal()+name+selection+extension;
     }
 }
