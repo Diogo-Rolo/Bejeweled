@@ -21,6 +21,14 @@ public class Grid {
         }
     }
 
+    //returns the pixel for the given col/row
+    public static int getXcol(int col){
+        return CELL_SIZE * col + X_PADDING;
+    }
+    public static int getYrow(int row){
+        return CELL_SIZE * row + Y_PADDING;
+    }
+
 
 
 }
