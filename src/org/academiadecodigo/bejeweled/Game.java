@@ -1,6 +1,6 @@
-package org.academiadecodigo.diogorolo;
+package org.academiadecodigo.bejeweled;
 
-import org.academiadecodigo.diogorolo.mouse.GridMouseHandler;
+import org.academiadecodigo.bejeweled.mouse.GridMouseHandler;
 
 public class Game {
 
@@ -20,5 +20,6 @@ public class Game {
     }
 
     public void start() {
+
     }
 }

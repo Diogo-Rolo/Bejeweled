@@ -1,6 +1,4 @@
-package org.academiadecodigo.diogorolo;
-
-import org.academiadecodigo.diogorolo.mouse.GridMouseHandler;
+package org.academiadecodigo.bejeweled;
 
 public class Main {
     public static void main(String[] args) {

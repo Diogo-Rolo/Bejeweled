@@ -1,9 +1,6 @@
-package org.academiadecodigo.diogorolo;
-
-import org.academiadecodigo.simplegraphics.pictures.Picture;
+package org.academiadecodigo.bejeweled;
 
 public enum GemType {
-    //MASTERCODER ("resources/cat.jpg"),
     MC1,
     MC2,
     MC3,

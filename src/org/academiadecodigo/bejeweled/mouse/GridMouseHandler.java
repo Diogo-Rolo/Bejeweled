@@ -1,6 +1,6 @@
-package org.academiadecodigo.diogorolo.mouse;
+package org.academiadecodigo.bejeweled.mouse;
 
-import org.academiadecodigo.diogorolo.Grid;
+import org.academiadecodigo.bejeweled.Grid;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
 import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
@@ -20,10 +20,7 @@ public class GridMouseHandler implements MouseHandler {
         this.grid = gameGrid;
     }
 
-    private void reset(){
-        x = 0;
-        y = 0;
-    }
+
 
 
     @Override

@@ -1,4 +1,4 @@
-package org.academiadecodigo.diogorolo;
+package org.academiadecodigo.bejeweled;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 

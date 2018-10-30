@@ -1,4 +1,4 @@
-package org.academiadecodigo.diogorolo;
+package org.academiadecodigo.bejeweled;
 
 public class Grid {
     //PROPERTIES
@@ -9,6 +9,7 @@ public class Grid {
     static final int Y_PADDING = 10;
     private Cell[][] cells;
     private Gem[][] gems;
+    private Cell lastClickedCell;
 
     //METHODS
     public void init(int size){
@@ -40,6 +41,8 @@ public class Grid {
         return CELL_SIZE * row + Y_PADDING;
     }
 
+
+    //reverse operations from above, getting col/row from pixel x/y
     public static int getColX(int x){
         return (int) Math.round((x - X_PADDING)/(CELL_SIZE));
     }
@@ -49,6 +52,31 @@ public class Grid {
 
 
     public void selectGem(int col, int row) {
-        gems[col][row].select();
+        if (lastClickedCell == null){
+            gems[col][row].select();
+            lastClickedCell = cells[col][row];
+            return;
+        }
+
+        if(checkForCorrectSwapAttempt(cells[col][row])){
+            System.out.println("valid");
+            return;
+        }
+        System.out.println("invalid");
+
     }
+
+    private boolean checkForCorrectSwapAttempt(Cell clicked) {
+        boolean isValid = false;
+            if (lastClickedCell.getCol() +1 == clicked.getCol() && lastClickedCell.getRow() == clicked.getRow()
+                    || lastClickedCell.getCol() - 1 == clicked.getCol() && lastClickedCell.getRow() == clicked.getRow()
+                    || lastClickedCell.getRow() + 1 == clicked.getRow() && lastClickedCell.getCol() == clicked.getCol()
+                    || lastClickedCell.getRow() - 1 == clicked.getRow() && lastClickedCell.getCol() == clicked.getCol()){
+                isValid = true;
+            }
+        return isValid;
+    }
+
+
+
 }
