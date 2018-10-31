@@ -28,4 +28,12 @@ public class Cell {
     public int getRow() {
         return row;
     }
+
+    public Gem getGem() {
+        return gem;
+    }
+
+    public void setGem(Gem gem){
+        this.gem = gem;
+    }
 }

@@ -10,6 +10,8 @@ public class Grid {
     private Cell[][] cells;
     private Gem[][] gems;
     private Cell lastClickedCell;
+    private int lastClickedCol;
+    private int lastClickedRow;
 
     //METHODS
     public void init(int size){
@@ -55,11 +57,25 @@ public class Grid {
         if (lastClickedCell == null){
             gems[col][row].select();
             lastClickedCell = cells[col][row];
+            lastClickedCol = col;
+            lastClickedRow = row;
+            return;
+        }
+        if (col == lastClickedCol && row == lastClickedRow){
+            gems[col][row].select();
+            lastClickedCell = null;
+            lastClickedRow = -1;
+            lastClickedCol = -1;
             return;
         }
 
         if(checkForCorrectSwapAttempt(cells[col][row])){
+            gems[col][row].select();
             System.out.println("valid");
+            cells[lastClickedCol][lastClickedRow].setGem(cells[col][row].getGem());
+            System.out.println(cells[lastClickedCol][lastClickedRow].getGem());
+            System.out.println(lastClickedCell.getGem());
+            cells[col][row].setGem(lastClickedCell.getGem());
             return;
         }
         System.out.println("invalid");
@@ -68,10 +84,8 @@ public class Grid {
 
     private boolean checkForCorrectSwapAttempt(Cell clicked) {
         boolean isValid = false;
-            if (lastClickedCell.getCol() +1 == clicked.getCol() && lastClickedCell.getRow() == clicked.getRow()
-                    || lastClickedCell.getCol() - 1 == clicked.getCol() && lastClickedCell.getRow() == clicked.getRow()
-                    || lastClickedCell.getRow() + 1 == clicked.getRow() && lastClickedCell.getCol() == clicked.getCol()
-                    || lastClickedCell.getRow() - 1 == clicked.getRow() && lastClickedCell.getCol() == clicked.getCol()){
+            if ((clicked.getCol() == lastClickedCell.getCol()&& (clicked.getRow() == lastClickedCell.getRow() + 1 || clicked.getRow() == lastClickedCell.getRow() - 1))
+                    || (clicked.getRow() == lastClickedCell.getRow() && (clicked.getCol() == lastClickedCell.getCol() + 1 || clicked.getCol() == lastClickedCell.getCol() - 1))){
                 isValid = true;
             }
         return isValid;
