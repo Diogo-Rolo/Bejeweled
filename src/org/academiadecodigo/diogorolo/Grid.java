@@ -4,16 +4,18 @@ public class Grid {
     //PROPERTIES
     int rows;
     int cols;
+    Gem hasSelected;
     static final int CELL_SIZE = 50;
     static final int X_PADDING = 10;
     static final int Y_PADDING = 10;
     private Cell[][] cells;
-    private Gem[][] gems;
+    //private Gem[][] gems;
 
     //METHODS
     public void init(int size){
         this.rows = size;
         this.cols = size;
+        this.hasSelected = null;
         cells = new Cell[size][size];
         for (int i = 0; i < cells.length ; i++) {
             for (int j = 0; j < cells[i].length ; j++) {
@@ -21,12 +23,12 @@ public class Grid {
             }
         }
 
-        gems = new Gem[size][size];
-        for (int i = 0; i < gems.length ; i++) {
-            for (int j = 0; j < gems[i].length ; j++) {
-                gems[i][j] = new Gem(i, j);
-            }
-        }
+        //gems = new Gem[size][size];
+        //for (int i = 0; i < gems.length ; i++) {
+        //    for (int j = 0; j < gems[i].length ; j++) {
+        //        gems[i][j] = new Gem(i, j);
+        //    }
+        //}
 
     }
 
@@ -49,6 +51,10 @@ public class Grid {
 
 
     public void selectGem(int col, int row) {
-        gems[col][row].select();
+        if(hasSelected!=null){
+            //hasSelected.
+
+        }
+       // gems[col][row].select();
     }
 }
