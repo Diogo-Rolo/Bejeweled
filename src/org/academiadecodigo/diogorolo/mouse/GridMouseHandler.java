@@ -31,7 +31,7 @@ public class GridMouseHandler implements MouseHandler {
         x = (int) e.getX();
         y = (int) e.getY();
 
-        grid.selectGem(Grid.getColX(x), Grid.getRowY(y));
+        grid.selectCell(Grid.getColX(x), Grid.getRowY(y));
         System.out.println(" x: "+ x + " Col: " + Grid.getColX(x));
         System.out.println(" y: "+ y + " Row: " + Grid.getRowY(y));
         e.toString();

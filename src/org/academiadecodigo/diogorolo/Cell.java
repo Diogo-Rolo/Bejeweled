@@ -30,4 +30,12 @@ public class Cell {
     public void setGem(Gem gem) {
         this.gem = gem;
     }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
 }

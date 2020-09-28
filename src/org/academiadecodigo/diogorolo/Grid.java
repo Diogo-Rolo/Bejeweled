@@ -4,7 +4,7 @@ public class Grid {
     //PROPERTIES
     int rows;
     int cols;
-    Gem hasSelected;
+    Cell hasSelected;
     static final int CELL_SIZE = 50;
     static final int X_PADDING = 10;
     static final int Y_PADDING = 10;
@@ -52,9 +52,21 @@ public class Grid {
 
     public void selectGem(int col, int row) {
         if(hasSelected!=null){
-            //hasSelected.
+            int c = hasSelected.getCol();
+            int r = hasSelected.getRow();
 
+
+
+            if(col == c && (r + 1 == row || row == r - 1) ||
+                    row == r && (c + 1 == col || col == c - 1)){
+
+            }
+            hasSelected.getGem().select();
+            hasSelected = cells[col][row];
+            hasSelected.getGem().select();
+            return;
         }
-       // gems[col][row].select();
+        hasSelected = cells[col][row];
+       cells[col][row].getGem().select();
     }
 }
